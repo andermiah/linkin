@@ -404,7 +404,7 @@
 
   <script>
     const app = document.getElementById('app');
-    const hash = window.location.hash.slice(1);
+    const hash = new URLSearchParams(window.location.search).get('d') || '';
 
     function isValidUrl(str) {
       try { const u = new URL(str); return u.protocol === 'http:' || u.protocol === 'https:'; }
@@ -479,7 +479,7 @@
         if (urls.length === 0) { err.style.display = 'block'; return; }
         err.style.display = 'none';
         const encoded = btoa(JSON.stringify(urls));
-        document.getElementById('shareUrl').textContent = `${location.origin}${location.pathname}#${encoded}`;
+        document.getElementById('shareUrl').textContent = `${location.origin}${location.pathname}?d=${encoded}`;
         document.getElementById('shareOutput').style.display = 'block';
         const btn = event.currentTarget;
         const orig = btn.textContent;

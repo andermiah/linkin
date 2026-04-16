@@ -695,7 +695,8 @@
 
   <script>
     const app = document.getElementById('app');
-    const hash = window.location.hash.slice(1);
+    const params = new URLSearchParams(location.search);
+    const hash = params.get('d') || window.location.hash.slice(1);
 
     function isValidUrl(str) {
       try {
@@ -801,7 +802,7 @@
         }
         err.style.display = 'none';
         const encoded = btoa(JSON.stringify(urls));
-        const shareUrl = `${location.origin}${location.pathname}#${encoded}`;
+        const shareUrl = `${location.origin}${location.pathname}?d=${encoded}`;
         document.getElementById('shareUrl').textContent = shareUrl;
         const out = document.getElementById('shareOutput');
         out.style.display = 'block';

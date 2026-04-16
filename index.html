@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>linkin — one link. all the tabs.</title>
   <meta name="theme-color" content="#F5F4F0">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='rgb(20,148,132)'/><text x='16' y='22' text-anchor='middle' font-family='system-ui,sans-serif' font-size='14' font-weight='700' fill='white'>li</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='rgb(20,148,132)'/><text x='16' y='24' text-anchor='middle' font-family='system-ui,sans-serif' font-size='18' font-weight='700' fill='white'>li</text></svg>">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://andermiah.github.io/linkin/">
   <meta property="og:title" content="Linkin — Bundle your links, share one URL">
@@ -415,38 +415,38 @@
           opacity 0.28s ease,
           transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
           display 0.28s ease allow-discrete;
+      }
 
-        &-header {
-          padding: 10px 14px;
-          border-bottom: 1px solid var(--border);
-          font-size: var(--text-2xs);
-          font-weight: 600;
-          letter-spacing: var(--tracking-wide);
-          text-transform: uppercase;
-          color: var(--fg-3);
-          background: var(--bg);
-          display: flex;
-          align-items: center;
-          gap: 6px;
+      .output-header {
+        padding: 10px 14px;
+        border-bottom: 1px solid var(--border);
+        font-size: var(--text-2xs);
+        font-weight: 600;
+        letter-spacing: var(--tracking-wide);
+        text-transform: uppercase;
+        color: var(--fg-3);
+        background: var(--bg);
+        display: flex;
+        align-items: center;
+        gap: 6px;
 
-          &::before {
-            content: '';
-            display: block;
-            width: 5px;
-            height: 5px;
-            border-radius: 50%;
-            background: var(--accent);
-          }
+        &::before {
+          content: '';
+          display: block;
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background: var(--accent);
         }
+      }
 
-        &-actions {
-          padding: 10px 14px;
-          border-top: 1px solid var(--border);
-          background: var(--bg);
-          display: flex;
-          align-items: center;
-          gap: 10px;
-        }
+      .output-actions {
+        padding: 10px 14px;
+        border-top: 1px solid var(--border);
+        background: var(--bg);
+        display: flex;
+        align-items: center;
+        gap: 10px;
       }
 
       @starting-style {
@@ -502,7 +502,7 @@
 
         li {
           display: flex;
-          align-items: flex-start;
+          align-items: stretch;
           border-bottom: 1px solid var(--border);
           position: relative;
           transition: background 0.15s ease;
@@ -540,6 +540,9 @@
         background: var(--bg);
         min-width: 42px;
         text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         flex-shrink: 0;
         line-height: var(--leading-normal);
       }
